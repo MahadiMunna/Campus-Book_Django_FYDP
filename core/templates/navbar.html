@@ -10,7 +10,7 @@
                     <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="">Posts</a>
+                    <a class="nav-link" aria-current="page" href="{% url 'posts' %}">Posts</a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">

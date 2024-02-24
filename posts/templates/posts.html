@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Posts - Campus Book{% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+<div>
+  <div class="conatiner mx-auto" style="margin-bottom: 200px;">
+    <h4 class="mt-4 text-center text-secondary">Total posts available - {{data|length}}</h4>
+    <div class="mx-auto row justify-content-center my-5 gap-2">
+      {% for post in data %}
+      <div class="card mb-3 shadow" style="max-width: 540px; height: fit-content;">
+        <div class="row g-0">
+          <div class="col-md-4 d-flex justify-content-center align-items-center">
+            {% if post.book_image %}
+            <img class="card-img" src="{{post.book_image.url}}" class="img-fluid rounded-start" alt="...">
+            {% else %}
+            <img class="card-img" src="{% static './images/No-Image-Placeholder.svg' %}" class="img-fluid rounded-start" alt="...">
+            {% endif %}
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">{{post.author}}</h6>
+              <small class="text-secondary">{{post.author.university}}</small><br>
+              <small class="text-secondary">{{post.timestamp}}</small>
+              <p class="card-text">{{post.post}}</p>
+              <div class="mb-1">
+                <small class="fw-bold">Book Name: {{post.book_name}}</small><br>
+                <small class="fw-bold">Book Author: {{post.book_author}}</small><br>
+                {% if post.post_type == "borrowing" %}
+                <small>Want to borrow this book</small>
+                {% else %}
+                <small>Want to share this book</small>
+                {% endif %}
+              </div>
+              <a href="" class="btn btn-outline-primary p-1">View post details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

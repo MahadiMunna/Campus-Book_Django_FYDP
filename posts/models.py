@@ -10,6 +10,7 @@ class PostModel(models.Model):
     author=models.ForeignKey(UserAccount, on_delete=models.CASCADE)
     book_name=models.CharField(max_length=100)
     book_author=models.CharField(max_length=100)
+    book_image = models.ImageField(upload_to='./book-images/uploads/', blank=True, null=True)
     post_type=models.CharField(choices=POST_TYPE, max_length=20)
     availability = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
