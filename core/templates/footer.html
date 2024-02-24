@@ -1,0 +1,11 @@
+{% load static %}
+<footer class="d-flex align-items-center justify-content-center flex-column bg-dark p-1 text-white">
+    <div class="d-flex gap-4 flex-wrap">
+        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+        <a class="nav-link" aria-current="page" href="">Posts</a>
+        <a class="nav-link" aria-current="page" href="">About</a>
+        <a class="nav-link" aria-current="page" href="">Contact</a>
+    </div>
+    <span>Campus Book</span>
+    <small>Copyright © {% now 'Y' %} - All right reserved</small>
+</footer>

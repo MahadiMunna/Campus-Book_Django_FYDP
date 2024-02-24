@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
+{% block head_title %}Campus Book - Home{% endblock %}
 {% load static %}
 {% block content %}
-<div class="my-5 container mx-auto my-4">
-   <h1>Welcome to home</h1>
+<div class="banner d-flex justify-content-center align-items-center flex-column flex-md-row"
+  style="background-image:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(249,159,85,0.13489145658263302) 100%);">
+  <div class="w-50">
+    <img class="img-fluid rounded rounded-4" src="{% static 'image/banner.gif' %}" alt="">
+  </div>
+  <div class="w-50">
+    <h1 class="text-primary fw-bold text-center text-md-start">Welcome to Campus Book</h1>
+    <p class="fw-bold text-center text-md-start">Discover new books, borrow now and read<br> Unleash Your Imagination with Every Borrow.
+    </p>
+    {% if request.user.is_authenticated %}
+    <p class="fw-bold text-center text-md-start"><a class="btn btn-outline-primary" href="">Profile</a></p>
+    {% else %}
+    <p class="fw-bold text-center text-md-start"><a class="btn btn-outline-primary" href="{% url 'signup' %}">Signup Now!</a></p>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}
