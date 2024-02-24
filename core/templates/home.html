@@ -12,7 +12,7 @@
     <p class="fw-bold text-center text-md-start">Discover new books, borrow now and read<br> Unleash Your Imagination with Every Borrow.
     </p>
     {% if request.user.is_authenticated %}
-    <p class="fw-bold text-center text-md-start"><a class="btn btn-outline-primary" href="">Profile</a></p>
+    <p class="fw-bold text-center text-md-start"><a class="btn btn-outline-primary" href="{% url 'profile' %}">Profile</a></p>
     {% else %}
     <p class="fw-bold text-center text-md-start"><a class="btn btn-outline-primary" href="{% url 'signup' %}">Signup Now!</a></p>
     {% endif %}
