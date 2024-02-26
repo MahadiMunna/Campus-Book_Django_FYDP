@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-97gt3#)_u^(7!n##oj#$6+cy%asrzgjnl9s-7w)_f$%$disxuo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['https://campus-book.onrender.com','https://*.127.0.0.1']
 
 
 # Application definition
