@@ -25,7 +25,7 @@
               <h6 class="card-title fw-bold">{{post.author}}</h6>
               <small class="text-secondary">{{post.author.university}}</small><br>
               <small class="text-secondary">{{post.timestamp}}</small>
-              <p class="card-text">{{post.post}}</p>
+              <p class="card-text">{{post.post | truncatewords:9}}</p>
               <div class="mb-1">
                 <small class="fw-bold">Book Name: {{post.book_name}}</small><br>
                 <small class="fw-bold">Book Author: {{post.book_author}}</small><br>

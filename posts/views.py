@@ -21,7 +21,7 @@ def add_post(request):
                 book_image=book_image,
                 post_type=post_type,
             )
-            return redirect('home')
+            return redirect('posts')
     else:
         post_form = PostForm()
     return render(request, 'post_form.html', {'form': post_form, 'type':'Add Post'})

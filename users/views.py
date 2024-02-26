@@ -13,7 +13,7 @@ from django.contrib.auth.forms import PasswordChangeForm, SetPasswordForm
 class UserRegistrationView(FormView):
     template_name = 'form.html'
     form_class = forms.RegistrationForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('profile')
     
     def form_valid(self,form):
         print(form.cleaned_data)
@@ -29,7 +29,7 @@ class UserRegistrationView(FormView):
 class UserLoginView(LoginView):
     template_name = 'form.html'
     def get_success_url(self):
-        return reverse_lazy('home')
+        return reverse_lazy('profile')
     def form_valid(self, form):
         messages.success(self.request, 'Logged In Successfully')
         return super().form_valid(form)
